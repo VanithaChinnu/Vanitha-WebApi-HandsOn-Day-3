@@ -16,27 +16,38 @@ namespace EmpWebApiWithSwagger.Controllers
     public class AuthController : ControllerBase
     {
         [HttpGet]
-        public ActionResult GetToken(string key, string userId, string userRole)
+        private string GenerateJSONWebToken(int userId, string userRole)
+
         {
-            return Ok(GenerateJWT(key, userId, userRole));
-        }
-        public string GenerateJWT(string key, string userId, string userRole)
-        {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mysuperdupersecret"));
+
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
             var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Role, userRole),
-                new Claim("UserId", userId.ToString())
-            };
+
+{
+
+new Claim(ClaimTypes.Role, userRole),
+
+new Claim("UserId", userId.ToString())
+
+};
+
             var token = new JwtSecurityToken(
-                claims: claims,
-                issuer: "https://www.snrao.com",
-                audience: "https://www.snrao.com",
-                expires: DateTime.Now.AddHours(3),
-                signingCredentials: credentials
-            );
+
+            issuer: "mySystem",
+
+            audience: "myUsers",
+
+            claims: claims,
+
+            expires: DateTime.Now.AddMinutes(2),
+
+            signingCredentials: credentials);
+
             return new JwtSecurityTokenHandler().WriteToken(token);
+
         }
     }
 }

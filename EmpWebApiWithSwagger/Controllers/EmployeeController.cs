@@ -10,17 +10,19 @@ using Microsoft.AspNetCore.Authorization;
 namespace EmpWebApiWithSwagger.Controllers { 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Administrators")]
+
     public class EmployeeController : ControllerBase {
         IEmpRepository empRep;
         public EmployeeController(IEmpRepository ier) {
             empRep = ier;
         }
+        [Authorize(Roles = "Admins")]
         [HttpGet]
         [ProducesResponseType(200)]
         public async Task<ActionResult<List<EMPL>>> GetAll() {
             return Ok(await empRep.GetAllEmployees());
         }
+        [Authorize(Roles = "POC")]
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
