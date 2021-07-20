@@ -77,7 +77,7 @@ namespace EmpWebApiWithSwagger
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vanitha_Web_Api_Day3_HandsOn", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rohini_Web_Api_Day3_HandsOn", Version = "v1" });
             });
         }
 
@@ -89,7 +89,7 @@ namespace EmpWebApiWithSwagger
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vanitha_Web_Api_Day3_HandsOn v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rohini_Web_Api_Day3_HandsOn v1"));
             }
 
             app.UseRouting();
