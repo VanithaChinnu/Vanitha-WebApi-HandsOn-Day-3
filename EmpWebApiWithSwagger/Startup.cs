@@ -99,6 +99,7 @@ namespace EmpWebApiWithSwagger
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+           
             });
         }
     }
