@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+    <title>Employe Web API</title>
+    <script>
+        var baseUrl = "http://localhost:39086/api/Employee/";
+        function showAllEmps() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", baseUrl);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var empList = JSON.parse(xhr.responseText);
+                    var emps = document.getElementById("emps");
+                    emps.innerHTML = "";
+                    for (var i = 0; i < empList.length; i++) {
+                        var emp = empList[i];
+                        var str = "<td>" + emp.EID + "</td><td>" + emp.EmpName + "</td><td>" + emp.DoBirth + "</td><td>" + emp.Salary + "</td>";
+                        emps.innerHTML += "<tr>" + str + "</tr>";
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="showAllEmps()">
+    <h2>List of Employees</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Emp Id</th>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="emps">
+            <tr>
+                <td colspan="4"><i>Please wait...</i></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

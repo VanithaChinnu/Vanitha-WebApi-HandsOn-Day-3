@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreEmpLibrary", "EFCoreEmpLibrary\EFCoreEmpLibrary.csproj", "{3B379DA5-E523-4672-88A9-BD52BD6A753B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpWebApiWithSwagger", "EmpWebApiWithSwagger\EmpWebApiWithSwagger.csproj", "{AA7ED8EF-88F3-4FBA-BF76-14CEB87BD104}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B379DA5-E523-4672-88A9-BD52BD6A753B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B379DA5-E523-4672-88A9-BD52BD6A753B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B379DA5-E523-4672-88A9-BD52BD6A753B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B379DA5-E523-4672-88A9-BD52BD6A753B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA7ED8EF-88F3-4FBA-BF76-14CEB87BD104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7ED8EF-88F3-4FBA-BF76-14CEB87BD104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7ED8EF-88F3-4FBA-BF76-14CEB87BD104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7ED8EF-88F3-4FBA-BF76-14CEB87BD104}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB66F66E-D5CA-4631-9216-6EFD45277042}
+	EndGlobalSection
+EndGlobal
