@@ -13,3 +13,4 @@ namespace EFCoreEmpLibrary
         public decimal? Salary { get; set; }
     }
 }
+
